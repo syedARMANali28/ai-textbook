@@ -1,0 +1,8 @@
+{
+  "label": "Nav2: Humanoid Navigation",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Explore Nav2 for advanced humanoid path planning and navigation."
+  }
+}

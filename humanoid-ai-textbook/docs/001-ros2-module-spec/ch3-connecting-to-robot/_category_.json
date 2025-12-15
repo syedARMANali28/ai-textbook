@@ -1,0 +1,8 @@
+{
+  "label": "Chapter 3: Connecting to the Robot",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn to bridge Python agents with ROS 2 controllers using `rclpy`."
+  }
+}

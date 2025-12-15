@@ -1,0 +1,52 @@
+---
+title: "Chapter 3: VLA Capstone Project"
+---
+
+import VlaQuiz2 from '@site/src/components/quizzes/VlaQuiz2';
+
+Now that we understand the core components of Voice-to-Action and Cognitive Planning, let's see how they come together in a capstone project.
+
+## Project Goal: The Voice-Commanded Helper Bot
+
+Imagine a humanoid robot in a simulated home environment. Our goal is to give it a simple voice command and have it perform a multi-step task autonomously.
+
+**The Command**: *"Please find my water bottle and bring it to the living room table."*
+
+## The Autonomous Flow
+
+Here is a step-by-step breakdown of how the robot uses the VLA model to accomplish this goal, integrating all the concepts we've learned.
+
+### 1. Hearing the Command (Whisper)
+The robot's microphone picks up the user's voice. This audio is sent to a backend service that uses an **asynchronous process** to transcribe it with OpenAI's Whisper model.
+
+*   **Input**: Audio stream
+*   **Output**: The text string `"Please find my water bottle and bring it to the living room table."`
+
+### 2. Understanding the Intent (LLM - The Brain)
+The transcribed text is fed to a Large Language Model (LLM). The LLM acts as the **cognitive planner**, parsing the sentence to understand the core intent and breaking it down into a logical sequence of high-level actions.
+
+*   **Input**: Text string
+*   **Output**: A structured plan, like:
+    ```json
+    {
+      "plan": [
+        { "action": "find_object", "object": "water_bottle" },
+        { "action": "grasp_object", "object": "water_bottle" },
+        { "action": "navigate_to", "location": "living_room_table" },
+        { "action": "place_object", "location": "living_room_table" }
+      ]
+    }
+    ```
+
+### 3. Executing the Actions (ROS 2 - The Nervous System)
+The ROS 2 framework on the robot receives this plan and executes it step-by-step.
+
+1.  **`find_object`**: ROS 2 activates the **Computer Vision** system. The robot uses its cameras to scan its environment, running object detection models until it identifies an object that matches the "water_bottle" class.
+2.  **`grasp_object`**: ROS 2 uses the location data from the vision system to engage the **Path Planning** and **Object Manipulation** systems. It calculates a route to the bottle, moves its arm, and uses its gripper to securely pick it up.
+3.  **`navigate_to`**: The **Navigation** and **Obstacle Avoidance** systems are activated. The robot uses its sensors (like LiDAR or depth cameras) to plan a path to the "living_room_table," avoiding furniture and other obstacles along the way.
+4.  **`place_object`**: Finally, the robot uses its arm again to gently place the water bottle on the table.
+
+## Conclusion
+This capstone project demonstrates the power of a Vision-Language-Action architecture. By combining the strengths of LLMs for understanding and planning with the robustness of a robotics framework like ROS 2 for execution, we can create robots that are far more intuitive, flexible, and useful in real-world environments.
+
+<VlaQuiz2 />

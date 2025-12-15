@@ -1,0 +1,50 @@
+---
+title: "Chapter 2: Cognitive Planning for Robotics"
+---
+
+import VlaQuiz1 from '@site/src/components/quizzes/VlaQuiz1';
+
+In the last chapter, we learned how a robot can "hear" our commands. But how does it "understand" them? If you tell a robot, "Get me a can of soda from the kitchen," how does it translate that high-level goal into a series of concrete actions?
+
+This is the domain of **Cognitive Planning**.
+
+## The "Brain" and the "Nervous System"
+
+Think about how *you* would perform that task. You wouldn't think about "contracting your bicep to extend your arm." Your brain operates at a much higher level. You think:
+1.  Go to the kitchen.
+2.  Open the fridge.
+3.  Find the soda.
+4.  Pick it up.
+5.  Bring it back.
+
+In our VLA model, we can think of the components in a similar way:
+-   The **Large Language Model (LLM)** acts as the **"Brain"**.
+-   The **Robot Operating System (ROS 2)** acts as the **"Nervous System"**.
+
+### The LLM as the Brain
+
+The LLM is the master planner. It takes the natural language command ("Get me a soda") and, using its vast world knowledge, breaks it down into a logical, high-level plan. It doesn't know *how* to move a robot's arm, but it knows the *sequence of steps* required to achieve the goal.
+
+The output from the LLM might look something like this:
+```json
+{
+  "plan": [
+    { "action": "navigate", "location": "kitchen" },
+    { "action": "open", "object": "fridge" },
+    { "action": "find", "object": "soda_can" },
+    { "action": "grasp", "object": "soda_can" },
+    { "action": "navigate", "location": "user_location" }
+  ]
+}
+```
+
+### ROS 2 as the Nervous System
+
+ROS 2 is the framework that connects the software to the robot's physical hardware. It takes the high-level plan from the LLM "brain" and translates each step into actual physical operations.
+
+-   When ROS 2 receives `{ "action": "navigate", "location": "kitchen" }`, it activates its navigation stack, using sensors to avoid obstacles and find a path to the kitchen.
+-   When it receives `{ "action": "grasp", "object": "soda_can" }`, it uses computer vision to locate the can and activates the motors in the robot's arm and hand to perform the grasp.
+
+This separation of concerns is powerful. The LLM provides the "what," and ROS 2 handles the "how." By combining a powerful reasoning engine (the LLM) with a robust robotics framework (ROS 2), we can create robots that are not just automated but truly *autonomous*, capable of understanding and acting on our intent.
+
+<VlaQuiz1 />

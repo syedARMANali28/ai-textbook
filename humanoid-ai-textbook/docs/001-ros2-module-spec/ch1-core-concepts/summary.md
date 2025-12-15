@@ -1,0 +1,3 @@
+# Chapter 1: The Core Concepts of ROS 2 - Summary
+
+This chapter introduced ROS 2 as the "nervous system" for robots, highlighting its modularity, robust communication, and rich toolset for building complex robotic applications. We delved into **nodes** as the fundamental units of computation, responsible for specific tasks and enabling decoupled, reusable, and distributed functionality. Finally, we provided an overview of ROS 2's primary communication patterns: **topics** (for asynchronous, one-to-many data streams), **services** (for synchronous, one-to-one request-response interactions), and **actions** (for long-running, goal-oriented tasks with feedback and preemption). Understanding these core concepts is essential for developing intelligent and responsive robots.

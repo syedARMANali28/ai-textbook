@@ -1,0 +1,8 @@
+{
+  "label": "Chapter 4: Describing Your Humanoid",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Utilize URDF to model robot kinematics and visuals for humanoids."
+  }
+}

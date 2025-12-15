@@ -1,0 +1,5 @@
+# Introduction to Nav2: Humanoid Navigation
+
+Nav2 (Navigation2) is a powerful, flexible, and modular navigation framework for ROS-enabled robots. While initially designed for ground-based mobile robots, its core principles and customizable components make it highly relevant for advanced humanoid navigation. For a humanoid robot, effective path planning and obstacle avoidance are paramount for safe and efficient operation in dynamic human environments.
+
+Nav2 provides a suite of tools for various aspects of navigation, including global and local planners, behavior trees for decision-making, and recovery behaviors. Adapting Nav2 for humanoids involves considering their unique locomotion (bipedal walking), balance control, and interaction with vertical obstacles and stairs. Integrating Nav2 with Isaac ROS's hardware-accelerated perception allows humanoids to build accurate environmental maps and execute precise, collision-free movements, transforming raw sensor data into intelligent, purposeful action within their environment.

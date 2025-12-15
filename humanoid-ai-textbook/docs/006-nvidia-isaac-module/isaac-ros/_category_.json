@@ -1,0 +1,8 @@
+{
+  "label": "Isaac ROS: Hardware-Accelerated Robotics",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn about NVIDIA Isaac ROS for hardware-accelerated VSLAM and perception."
+  }
+}

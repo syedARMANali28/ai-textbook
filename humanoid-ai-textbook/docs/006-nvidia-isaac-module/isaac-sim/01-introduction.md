@@ -1,0 +1,5 @@
+# Introduction to Isaac Sim: Photorealistic Simulation
+
+NVIDIA Isaac Sim is a powerful, extensible platform for developing, testing, and deploying AI-enabled robots. At its core, Isaac Sim leverages NVIDIA's Omniverse platform to create incredibly realistic and physically accurate virtual environments. This capability, known as photorealistic simulation, is crucial for modern robotics.
+
+Imagine training a robot in a virtual world that perfectly mimics the complexities of the real one – varied lighting, diverse textures, and dynamic objects. This eliminates the need for expensive and time-consuming real-world prototypes and testing. By providing a rich, high-fidelity simulation, Isaac Sim allows developers to rapidly iterate on robot designs, control algorithms, and AI models in a safe, scalable, and reproducible manner. It's the ultimate sandbox for the AI-driven future of robotics.

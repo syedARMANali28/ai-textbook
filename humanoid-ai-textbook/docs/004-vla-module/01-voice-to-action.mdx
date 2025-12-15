@@ -1,0 +1,38 @@
+---
+title: "Chapter 1: Voice-to-Action with Whisper"
+---
+
+import VlaQuiz1 from '@site/src/components/quizzes/VlaQuiz1';
+
+Welcome to the exciting world of Vision-Language-Action (VLA) models! In this first chapter, we'll explore one of the fundamental building blocks of voice-driven robotics: converting spoken language into text that a machine can understand.
+
+## From Spoken Words to Digital Text
+
+Before a robot can understand a command like "pick up the red block," it first needs to "hear" it. This is where **Speech-to-Text (STT)** models come into play. One of the most powerful and popular STT models is **OpenAI's Whisper**.
+
+Whisper is an AI model trained on a massive dataset of diverse audio. It can recognize and transcribe spoken language from various sources, accents, and languages with remarkable accuracy.
+
+## The Challenge: Why Can't We Just "Ask" the Robot?
+
+Imagine you're building a web interface to control a robot. A user clicks a button, records a command, and waits for the robot to move. What happens behind the scenes?
+
+Transcribing audio, especially longer commands, can take time—from a few seconds to even a minute. If our web application just stops and waits for the transcription to finish, the user interface will freeze. This is called a **synchronous** or **blocking** operation, and it leads to a poor user experience.
+
+## The Solution: Asynchronous Transcription
+
+To solve this, we use an **asynchronous** pattern. Think of it like ordering food at a busy counter:
+1.  You give your order (you submit the audio file).
+2.  You get a ticket number and can go sit down (your web app is free and responsive).
+3.  The kitchen prepares your food in the background (the server transcribes the audio as a background task).
+4.  Your number is called when the food is ready (the server sends the completed text back to the web app).
+
+This is a much better experience! In technical terms, the process looks like this:
+
+1.  **Submission**: The web application (frontend) sends the user's audio file to the backend server.
+2.  **Task Queuing**: The backend server doesn't transcribe it immediately. Instead, it places the transcription job into a queue and immediately responds to the frontend with a "Task ID", confirming the job was received.
+3.  **Background Worker**: A separate process, called a "worker," constantly watches this queue. It picks up the transcription job, uses the Whisper model to convert the audio to text, and saves the result.
+4.  **Result Retrieval**: The frontend can now periodically ask the server, "Is the job with this Task ID done yet?" (a process called polling), or the server can proactively notify the frontend using a technology like WebSockets when the result is ready.
+
+This asynchronous architecture is a core concept in modern web and robotics applications. It ensures that systems remain responsive and scalable, even when dealing with time-consuming tasks like AI inference.
+
+<VlaQuiz1 />

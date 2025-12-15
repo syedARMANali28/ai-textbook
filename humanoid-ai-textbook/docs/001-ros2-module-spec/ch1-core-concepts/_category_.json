@@ -1,0 +1,8 @@
+{
+  "label": "Chapter 1: The Core Concepts of ROS 2",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Understand the fundamental building blocks of ROS 2."
+  }
+}

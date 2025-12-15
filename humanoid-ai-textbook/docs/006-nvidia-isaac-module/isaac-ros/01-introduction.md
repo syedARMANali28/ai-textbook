@@ -1,0 +1,5 @@
+# Introduction to Isaac ROS: Hardware-Accelerated Robotics
+
+While Isaac Sim provides the virtual training ground, NVIDIA Isaac ROS brings the power of hardware acceleration to real-world robotics. ROS (Robot Operating System) is a widely used framework for robot software development, but complex tasks like perception and navigation can demand significant computational resources. Isaac ROS addresses this by integrating with NVIDIA's GPU technologies, enabling dramatically faster and more efficient processing.
+
+This hardware acceleration is critical for enabling real-time performance in AI-powered robots, especially humanoids. It allows the robot to quickly process massive amounts of sensor data – from cameras, LiDAR, and IMUs – to understand its environment, track objects, and make intelligent decisions. By offloading these computationally intensive operations to specialized hardware, Isaac ROS frees up the main CPU for higher-level cognitive functions, making the robot’s "brain" more responsive and capable.
