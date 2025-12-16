@@ -14,16 +14,16 @@ function HomepageHeader() {
           Learn Physical AI, Humanoid Robotics, and Voice-to-Action
         </p>
         <div className={styles.buttons}>
-          <Link className={styles.button} to="/docs/001-ros2-module-spec">
+          <Link className={styles.button} to="/docs/ros2-module-spec/">
             ROS 2 Module
           </Link>
-          <Link className={styles.button} to="/docs/004-vla-module">
+          <Link className={styles.button} to="/docs/vla-module/">
             VLA Module
           </Link>
-          <Link className={styles.button} to="/docs/005-digital-twin-module">
+          <Link className={styles.button} to="/docs/digital-twin-module/">
             Digital Twin Module
           </Link>
-          <Link className={styles.button} to="/docs/006-nvidia-isaac-module">
+          <Link className={styles.button} to="/docs/nvidia-isaac-module/">
             NVIDIA Isaac Module
           </Link>
         </div>
